@@ -1,11 +1,18 @@
-require 'nekoposu/version'
-require 'nekoposu/configuration'
-require 'nekoposu/authentication_key'
-
 require 'time'
 require 'base64'
 require 'securerandom'
 require 'digest/sha2'
+require 'nokogiri'
+
+require 'nekoposu/version'
+require 'nekoposu/configuration'
+require 'nekoposu/authentication_key'
+require 'nekoposu/model/base'
+require 'nekoposu/model/status'
+require 'nekoposu/model/status/history'
+require 'nekoposu/model/due_date'
+require 'nekoposu/model/tracking_number'
+require 'nekoposu/model/shipping_label'
 
 begin
   require 'pry'

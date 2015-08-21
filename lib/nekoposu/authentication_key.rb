@@ -6,14 +6,12 @@ module Nekoposu
     end
 
     def random_key
-      return @random_key if @random_key
-      @random_key = Time.new.strftime("%d%L%m%H%Y%M%S")
+      @random_key ||= Time.new.strftime("%d%L%m%H%Y%M%S")
     end
     alias_method :auth_key, :random_key
 
     def hash_value
-      return @hash_value if @hash_value
-      @hash_value = Digest::SHA256.digest("#{common_key}#{random_key}")
+      @hash_value ||= Digest::SHA256.hexdigest("#{common_key}#{random_key}")
     end
 
     def base64_value

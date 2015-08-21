@@ -36,7 +36,7 @@ describe Nekoposu::AuthenticationKey do
   describe '#hash_value' do
     subject { key_maker.hash_value }
     let(:expected_value) do
-      Digest::SHA256.digest("#{key_maker.common_key}#{key_maker.random_key}")
+      Digest::SHA256.hexdigest("#{key_maker.common_key}#{key_maker.random_key}")
     end
     it 'returns binary data' do
       expect(subject).to eq expected_value
@@ -46,7 +46,7 @@ describe Nekoposu::AuthenticationKey do
   describe '#base64_value' do
     subject { key_maker.hash_value }
     let(:expected_value) do
-      Digest::SHA256.digest("#{key_maker.common_key}#{key_maker.random_key}")
+      Digest::SHA256.hexdigest("#{key_maker.common_key}#{key_maker.random_key}")
     end
     it 'returns binary data' do
       expect(subject).to eq expected_value
