@@ -49,8 +49,6 @@ module Nekoposu
       def xml
         return @xml if defined? @xml
         return @xml = nil if body.nil?
-        pp body
-
         @xml = Nokogiri::XML(body)
       end
 
