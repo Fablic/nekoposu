@@ -44,6 +44,10 @@ module Nekoposu
         end
       end
 
+      def error?
+        error_infos.size > 0
+      end
+
       private
 
       def xml
@@ -89,7 +93,7 @@ module Nekoposu
         element.content
       end
 
-      def default_paramater_exist?
+      def default_parameter_exist?
         company_id && request_datetime
       end
     end

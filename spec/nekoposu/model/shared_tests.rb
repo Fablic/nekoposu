@@ -47,6 +47,11 @@ shared_examples_for 'base class behavier' do
       subject { model.error_infos }
       it { should eq [] }
     end
+
+    describe '#error?' do
+      subject { model.error? }
+      it { should eq false }
+    end
   end
 
   context 'failure' do
@@ -61,6 +66,11 @@ shared_examples_for 'base class behavier' do
     describe '#error_infos' do
       subject { model.error_infos }
       it { should eq expected_failure_error_infos }
+    end
+
+    describe '#error?' do
+      subject { model.error? }
+      it { should eq true }
     end
   end
 end

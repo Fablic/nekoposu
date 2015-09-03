@@ -13,6 +13,7 @@ require 'nekoposu/model/status/history'
 require 'nekoposu/model/due_date'
 require 'nekoposu/model/tracking_number'
 require 'nekoposu/model/shipping_label'
+require 'nekoposu/model/qr_code'
 
 begin
   require 'pry'

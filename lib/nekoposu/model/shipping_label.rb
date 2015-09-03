@@ -9,7 +9,7 @@ module Nekoposu
         :source_prefecture, :source_city, :source_street, :source_building,
         :source_company, :source_division,
         :source_last_name, :source_first_name,
-        :baggage_description, :pickup
+        :baggage_name, :pickup
       )
 
       attr_reader(
@@ -209,13 +209,13 @@ module Nekoposu
           srcAddress2: source_city,
           srcLastNm: source_last_name,
           srcFirstNm: source_first_name,
-          baggDesc2: baggage_description,
+          baggDesc2: baggage_name,
           shukaFlg: pickup? ? '1' : '0'
         }
       end
 
       def proper_parametaters?
-        return false unless default_paramater_exist?
+        return false unless default_parameter_exist?
         return REQUIRED_PARAMATERS.all? do |param_name_sym|
           send(param_name_sym)
         end

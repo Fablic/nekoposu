@@ -74,12 +74,11 @@ module Nekoposu
 
       def params
         return @params unless @params.nil?
-        fail unless default_paramater_exist?
+        fail unless default_parameter_exist?
         unless source_zipcode && destination_zipcode && ship_date
           fail
         end
         h = {
-          companyId: company_id,
           iraiDatetime: request_datetime,
           dstZipCd: destination_zipcode,
           srcZipCd: source_zipcode,

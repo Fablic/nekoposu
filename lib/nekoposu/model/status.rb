@@ -46,10 +46,9 @@ module Nekoposu
 
       def params
         return @params unless @params.nil?
-        fail unless default_paramater_exist?
+        fail unless default_parameter_exist?
         fail unless tracking_number
         h = {
-          companyId: company_id,
           iraiDatetime: request_datetime,
           denpyoNo: tracking_number
         }
