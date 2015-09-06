@@ -13,12 +13,11 @@ module Nekoposu
         return @params unless @params.nil?
         fail unless default_parameter_exist?
         fail unless trading_id
-        h = {
+        @params = {
           iraiDatetime: request_datetime,
-          tradingId: trading_id
+          tradingId: trading_id,
+          clientIp: client_ip
         }
-        h[:clientIp] = client_ip unless client_ip.nil?
-        @params = h
       end
 
       def action
