@@ -25,13 +25,12 @@ module Nekoposu
       end
 
       def qrcode_type=(type_sym)
-        return @qrcode_type = :nekopit unless defined? type_sym
-        return @qrcode_type = :nekopit if type_sym.nil?
-        @qrcode_type = type_sym
+        return @qrcode_type = type_sym if QRCODE_TYPE.key?(type_sym)
+        @qrcode_type = :nekopit
       end
 
       def qrcode_type
-        QRCODE_TYPE[@qrcode_type]
+        defined?(@qrcode_type) ? QRCODE_TYPE[@qrcode_type] : QRCODE_TYPE[:nekopit]
       end
 
       private
